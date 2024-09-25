@@ -13,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MyAccountActivity extends AppCompatActivity {
     private ImageButton btnVoltarHome2;
-    private Button btnDoacao;
+    private Button btnDoacao, btnSair;
     private Button btnFaq;
 
 
@@ -26,6 +26,7 @@ public class MyAccountActivity extends AppCompatActivity {
         btnVoltarHome2 = findViewById(R.id.imageButton3);
         btnDoacao = findViewById(R.id.btnDoacao);
         btnFaq = findViewById(R.id.btnFaq);
+        btnSair = findViewById(R.id.btnSair);
 
         btnVoltarHome2.setOnClickListener(view ->{
             startActivity(new Intent(this, HomeActivity.class));
@@ -38,6 +39,9 @@ public class MyAccountActivity extends AppCompatActivity {
             startActivity(new Intent(this, FACActivity.class));
         }));
 
+        btnSair.setOnClickListener((view ->{
+            startActivity(new Intent(this, MainActivity.class));
+        }));
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);

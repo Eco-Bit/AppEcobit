@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
-<<<<<<< HEAD
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/AppEcobit" vcs="Git" />
-=======
-    <mapping directory="" vcs="Git" />
->>>>>>> 78c1e9077d7ac72bbb6d12807312d4c590eeabb6
   </component>
 </project>
