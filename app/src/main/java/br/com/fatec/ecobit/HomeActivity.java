@@ -33,7 +33,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
         btnPerfil.setOnClickListener(view ->{
-            startActivity(new Intent(this, MyAccount.class));
+            startActivity(new Intent(this, MyAccountActivity.class));
         });
 
 

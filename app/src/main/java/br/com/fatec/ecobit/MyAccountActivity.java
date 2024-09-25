@@ -11,7 +11,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MyAccount extends AppCompatActivity {
+public class MyAccountActivity extends AppCompatActivity {
     private ImageButton btnVoltarHome2;
     private Button btnDoacao;
     private Button btnFaq;

@@ -25,7 +25,7 @@ public class MyDoacoesActivity extends AppCompatActivity {
         btnVoltarPerfil2 = findViewById(R.id.imageButton5);
 
         btnVoltarPerfil2.setOnClickListener(view ->{
-            startActivity(new Intent(this, MyAccount.class));
+            startActivity(new Intent(this, MyAccountActivity.class));
         });
 
         // Iniciando a lista

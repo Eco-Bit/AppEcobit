@@ -39,7 +39,7 @@
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".MyAccount"
+            android:name=".MyAccountActivity"
             android:exported="false" />
         <activity
             android:name=".Home"
