@@ -18,23 +18,26 @@ public class ProfileActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        initializeComponents();
-
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_profile);
+
+        initializeComponents();
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
+        // Define o listener de clique para btnVoltar
         btnVoltar.setOnClickListener(v -> finish());
+
+        // Define o listener de clique para btnCancel
         btnCancel.setOnClickListener(v -> finish());
     }
 
-    public void initializeComponents(){
+    public void initializeComponents() {
         btnVoltar = findViewById(R.id.btnBack);
         btnCancel = findViewById(R.id.btnProCancel);
     }
