@@ -2,16 +2,20 @@ package br.com.fatec.ecobit;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.Patterns;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import br.com.fatec.ecobit.Retrofit.RetrofitService;
+import br.com.fatec.ecobit.Retrofit.UsuarioAPI;
+import java.util.Map;
+
+import br.com.fatec.ecobit.model.Usuario;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
         btnLogin = findViewById(R.id.btnLogin);
@@ -31,68 +34,55 @@ public class MainActivity extends AppCompatActivity {
         editPassword = findViewById(R.id.editPassword);
 
         btnLogin.setOnClickListener(view -> {
-            Login();
+            login();
         });
 
         btnCadastro.setOnClickListener(view -> {
             startActivity(new Intent(this, RegisterActivity.class));
         });
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
     }
 
-    public void Login() {
+    public void login() {
         String email = editEmail.getText().toString();
         String password = editPassword.getText().toString();
 
-        if (!email.isEmpty() && !password.isEmpty()) {
-            if (Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                startActivity(new Intent(this, HomeActivity.class));
-            } else {
-                Toast.makeText(this, "E-mail inválido", Toast.LENGTH_SHORT).show();
-            }
-        } else {
+        if (email.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
+            return;
         }
-    }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.i("Ciclo de vida", "onStart");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.i("Ciclo de vida", "onStop");
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Bundle bundle = getIntent().getExtras();
-        if(bundle != null){
-            String email = bundle.getString("email", " ");
-            String password = bundle.getString("password", " ");
-            editEmail.setText(email);
-            editPassword.setText(password);
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            Toast.makeText(this, "E-mail inválido", Toast.LENGTH_SHORT).show();
+            return;
         }
-    }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.i("Ciclo de vida", "onDestroy");
-    }
+        Usuario usuario = new Usuario();  // Criar um objeto com apenas email e senha
+        usuario.setemail(email);
+        usuario.setSenha(password);
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.i("Ciclo de vida", "onPause");
+        UsuarioAPI api = new RetrofitService().getRetrofit().create(UsuarioAPI.class);
+        api.login(usuario).enqueue(new Callback<Map<String, Object>>() {
+            @Override
+            public void onResponse(Call<Map<String, Object>> call, Response<Map<String, Object>> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    Map<String, Object> responseBody = response.body();
+                    String id = (String) responseBody.get("id");  // Pega o ID retornado
+                    if (id != null) {
+                        Toast.makeText(MainActivity.this, "Login bem-sucedido! ", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(MainActivity.this, "Falha ao fazer login. Verifique as credenciais.", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(MainActivity.this, "Falha ao fazer login. Verifique as credenciais.", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Map<String, Object>> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "Erro de conexão: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

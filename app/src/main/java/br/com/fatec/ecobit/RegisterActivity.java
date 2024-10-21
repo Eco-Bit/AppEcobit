@@ -72,8 +72,7 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(this, "Senhas Divergentes", Toast.LENGTH_SHORT).show();
             return;
         }
-
-        // Proceed with registration
+        
         registerUser(nameStr, emailStr, passwordStr);
     }
 

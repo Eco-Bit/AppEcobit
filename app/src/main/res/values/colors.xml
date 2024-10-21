@@ -8,4 +8,5 @@
     <color name="img_datail">#866049</color>
     <color name="bg_navbar">#EAE9E7</color>
     <color name="black_12">#32000000</color>
+    <color name="btn_cancel_color">#C3C2C0</color>
 </resources>

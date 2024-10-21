@@ -5,20 +5,22 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/white"
     tools:context=".RegisterActivity">
 
-    <ImageButton
-        android:id="@+id/btnImgBack"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:clickable="false"
         android:contentDescription="@string/backArrow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
+        app:layout_constraintVertical_bias="0.05"
         app:srcCompat="@drawable/ic_back_arrow" />
 
     <ImageView
@@ -115,12 +117,11 @@
 
     <Button
         android:id="@+id/btnRegister"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Criar conta"
-        android:layout_marginStart="100dp"
-        android:layout_marginEnd="100dp"
-        android:padding="16dp"
+        android:paddingVertical="8dp"
+        android:paddingHorizontal="50dp"
         android:textSize="18sp"
         android:backgroundTint="@color/btn_color"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -129,7 +130,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.85" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
