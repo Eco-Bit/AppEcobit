@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".EditaDoacaoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="68dp"
+            app:srcCompat="@drawable/ecobit_logo" />
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="34dp"
+            app:srcCompat="@drawable/ic_back_arrow"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/editTituloUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Título"
+            android:inputType="text"
+            android:background="@drawable/rounded_edit"
+            android:textAlignment="center"
+            android:textColorHint="#AAAAAA"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:padding="16dp"
+            android:minHeight="48dp"
+            android:layout_marginBottom="10dp"/>
+
+        <EditText
+            android:id="@+id/editQuantidadeUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Quantidade"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:background="@drawable/rounded_edit"
+            android:textAlignment="center"
+            android:textColorHint="#AAAAAA"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:padding="16dp"
+            android:layout_marginBottom="10dp"/>
+
+        <EditText
+            android:id="@+id/editCategoriaUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Categoria"
+            android:minHeight="48dp"
+            android:inputType="text"
+            android:background="@drawable/rounded_edit"
+            android:textAlignment="center"
+            android:textColorHint="#AAAAAA"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:padding="16dp"
+            android:layout_marginBottom="10dp"/>
+
+        <EditText
+            android:id="@+id/editCondicaoUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Condição"
+            android:minHeight="48dp"
+            android:inputType="text"
+            android:background="@drawable/rounded_edit"
+            android:textAlignment="center"
+            android:textColorHint="#AAAAAA"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:padding="16dp"
+            android:layout_marginBottom="10dp"/>
+
+        <EditText
+            android:id="@+id/editDisponibilidadeUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Disponibilidade p/ Entregar"
+            android:minHeight="48dp"
+            android:inputType="text"
+            android:background="@drawable/rounded_edit"
+            android:textAlignment="center"
+            android:textColorHint="#AAAAAA"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:padding="16dp"
+            android:layout_marginBottom="10dp"/>
+
+        <EditText
+            android:id="@+id/editDescricaoUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:hint="Descrição"
+            android:inputType="textMultiLine"
+            android:background="@drawable/rounded_edit"
+            android:textColorHint="#AAAAAA"
+            android:gravity="start|top"
+            android:textSize="18sp"
+            android:padding="16dp"
+            android:minHeight="200dp"
+            android:layout_marginBottom="10dp"
+            android:lines="4"
+            android:scrollbars="vertical"
+            android:scrollHorizontally="false"
+            android:fillViewport="true" />
+
+        <Button
+            android:id="@+id/btnSalvarUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Salvar"
+            android:backgroundTint="@color/btn_color"/>
+
+    </LinearLayout>
+</ScrollView>

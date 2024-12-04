@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".PontoDetalhesActivity">
+
+    <!-- Logo do app -->
+    <ImageView
+        android:id="@+id/imageViewLogo"
+        android:layout_width="149dp"
+        android:layout_height="55dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.05"
+        app:srcCompat="@drawable/ecobit_logo" />
+
+    <!-- Botão de voltar -->
+    <ImageButton
+        android:id="@+id/imageButtonBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:contentDescription="@string/backArrow"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.05"
+        app:srcCompat="@drawable/ic_back_arrow"
+        android:background="@null" />
+
+    <!-- Imagem ilustrativa do Ecoponto -->
+    <ImageView
+        android:id="@+id/imageEcoponto"
+        android:layout_width="300dp"
+        android:layout_height="180dp"
+        app:layout_constraintTop_toBottomOf="@id/imageViewLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        app:srcCompat="@drawable/icon"
+        tools:ignore="MissingConstraints" />
+
+    <!-- Nome do Ecoponto -->
+    <TextView
+        android:id="@+id/textNomeEcoponto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Nome do Ecoponto"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/imageEcoponto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        android:layout_marginTop="16dp" />
+
+    <!-- Endereço do Ecoponto -->
+
+    <!-- Materiais aceitos -->
+
+    <!-- Disponibilidade no sábado -->
+
+    <!-- Botão para mais detalhes -->
+    <TextView
+        android:id="@+id/textEnderecoEcoponto"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rounded_edit"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="Endereço: Rua X, 123"
+        android:textSize="16sp"
+        android:layout_marginHorizontal="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textNomeEcoponto" />
+
+
+    <TextView
+        android:id="@+id/textNumeroEcoponto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_edit"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="Número: 123"
+        android:textSize="16sp"
+        android:layout_marginHorizontal="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textEnderecoEcoponto" />
+
+    <TextView
+        android:id="@+id/textAbertoSabado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:background="@drawable/rounded_edit"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="Aberto aos Sábados: Sim"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

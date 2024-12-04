@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/prodsFragment"
+        android:icon="@drawable/baseline_home_24"
+        android:title="Home"
+        />
+
+    <item android:id="@+id/ecoFragment"
+        android:icon="@drawable/baseline_find_replace_24"
+        android:title="Ecoponto" />
+
+    <item android:id="@+id/chatFragment"
+        android:icon="@drawable/baseline_forum_24"
+        android:title="Chat" />
+
+</menu>

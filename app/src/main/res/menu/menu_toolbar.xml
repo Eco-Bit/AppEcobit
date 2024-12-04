@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/doacao"
+        android:icon="@drawable/baseline_add_24"
+        app:showAsAction="ifRoom"
+        android:title="Doacao"/>
+
+   <item android:id="@+id/perfil"
+       android:title="Perfil"
+       />
+    <item android:id="@+id/menu_sair"
+        android:title="Sair"
+        />
+
+</menu>

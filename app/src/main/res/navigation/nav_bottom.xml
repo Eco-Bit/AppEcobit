@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_bottom"
+    app:startDestination="@id/prodsFragment">
+
+    <fragment
+        android:id="@+id/prodsFragment"
+        android:name="br.com.fatec.ecobit.home.view.prodsFragment"
+        android:label="fragment_prods"
+        tools:layout="@layout/fragment_prods" />
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="br.com.fatec.ecobit.home.view.chatFragment2"
+        android:label="fragment_chat2"
+        tools:layout="@layout/fragment_chat2" />
+    <fragment
+        android:id="@+id/ecoFragment"
+        android:name="br.com.fatec.ecobit.home.view.ecoFragment"
+        android:label="fragment_eco"
+        tools:layout="@layout/fragment_eco" />
+
+</navigation>

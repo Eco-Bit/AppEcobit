@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="btn_color">#C5AC8D</color>
+    <color name="ic_color">#6BA08C</color>
+    <color name="bg_img_color">#C3A19A</color>
+    <color name="img_datail">#866049</color>
+    <color name="bg_navbar">#EAE9E7</color>
+    <color name="black_12">#32000000</color>
+    <color name="btn_cancel_color">#C3C2C0</color>
+    <color name="white_gelo">#F5F5F5</color>
+</resources>
